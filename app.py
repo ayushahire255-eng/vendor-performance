@@ -5,7 +5,7 @@ from pathlib import Path
 
 # --- PAGE CONFIGURATION ---
 st.set_page_config(
-    page_title="Supply Chain Analytics Dashboard",
+    page_title="Vendor Invoice Intelligence Portal",
     page_icon="📦",
     layout="wide"
 )
@@ -35,7 +35,7 @@ freight_model = load_freight_model()
 flag_model, flag_scaler = load_flagging_artifacts()
 
 # --- UI HEADER ---
-st.title("📦 Supply Chain Predictive Diagnostics")
+st.title("📦 Vendor Invoice Intelligence Portal")
 st.markdown("Run live inference using your production machine learning workflows.")
 
 # --- NAVIGATION SIDEBAR ---
