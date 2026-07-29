@@ -56,8 +56,7 @@ with tab1:
             payload = pd.DataFrame({"Dollars": [dollars_input]})
             raw_prediction = freight_model.predict(payload)
             st.success("Ledger analysis completed successfully!")
-            st.metric(label="Calculated Freight Allocation Reference", value=f"${round(float(raw_prediction), 2)}")
-
+            st.metric(label="Calculated Freight Allocation Reference", value=f"${round(float(raw_projection), 2)}")
 # ==============================================================================
 # TAB 2: AUDIT RISK TRACER
 # ==============================================================================
