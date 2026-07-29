@@ -52,11 +52,11 @@ with tab1:
             dollars_input = st.number_input("Invoice Valuation ($)", min_value=0.0, value=1500.0, step=50.0)
             submit_freight = st.form_submit_button("Calculate Cost Bracket", type="primary")
             
-        if submit_freight:
+       if submit_freight:
             payload = pd.DataFrame({"Dollars": [dollars_input]})
             raw_prediction = freight_model.predict(payload)
             st.success("Ledger analysis completed successfully!")
-            st.metric(label="Calculated Freight Allocation Reference", value=f"${round(float(raw_projection), 2)}")
+            st.metric(label="Calculated Freight Allocation Reference", value=f"${round(float(raw_prediction), 2)}")
 # ==============================================================================
 # TAB 2: AUDIT RISK TRACER
 # ==============================================================================
