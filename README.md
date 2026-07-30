@@ -1,72 +1,291 @@
-📊 VENDOR PERFORMANCE & COST LEAKAGE INTELLIGENCE PORTAL
+# 🚀 Vendor Performance Analytics & Invoice Risk Prediction
 
- Supply Chain Data Analytics, Relational SQL Auditing & Strategic Insights Engine
+An end-to-end Data Analytics and Machine Learning project that analyzes vendor purchasing performance, predicts high-risk invoices, and provides business insights using SQL, Python, Power BI, Machine Learning, and Streamlit.
 
-🎯 1. Project Objective & Business Case
+---
 
-In modern corporate procurement, vendor transaction ledgers are prone to systematic cost leakages, undetected billing inflation, and supplier processing delays.
+# 📌 Project Overview
 
-The objective of this project is to build an automated data analytics workflow that securely extracts transactional records from a relational database, applies analytical benchmarks to flag invoice discrepancies, and renders interactive, real-time KPI data visualizations to protect firm profit margins.
+Procurement teams process thousands of purchase orders and vendor invoices every year. Manual invoice verification is time-consuming and error-prone.
+
+This project builds a complete analytics pipeline to:
+
+- Analyze vendor purchasing performance
+- Monitor procurement spending
+- Predict high-risk invoices using Machine Learning
+- Visualize procurement KPIs in Power BI
+- Deploy the prediction model using Streamlit
+
+---
+
+# 🎯 Business Problem
+
+Organizations often face:
+
+- High procurement costs
+- Delayed invoice verification
+- Manual fraud detection
+- Vendor performance issues
+- Poor visibility into purchasing trends
+
+The objective is to support procurement teams with data-driven insights and automated invoice risk prediction.
+
+---
+
+# 🏗 Project Architecture
+
+```
+SQLite Database
+        │
+        ▼
+SQL Queries
+        │
+        ▼
+Python Data Processing
+        │
+        ▼
+Machine Learning Model
+(Random Forest Classifier)
+        │
+        ▼
+Streamlit Prediction App
+        │
+        ▼
+Power BI Dashboard
+        │
+        ▼
+Business Decision Support
+```
+
+---
+
+# 📊 Dataset
+
+The project uses an inventory procurement database containing:
+
+- Purchases
+- Vendor Invoice
+- Purchase Prices
+- Beginning Inventory
+- Ending Inventory
+
+The data was exported from SQLite into CSV files for Power BI reporting.
+
+---
+
+# 🛠 Technologies Used
+
+- Python
+- SQL (SQLite)
+- Pandas
+- NumPy
+- Scikit-learn
+- Joblib
+- Matplotlib
+- Power BI
+- Streamlit
+- Git & GitHub
+
+---
+
+# 🤖 Machine Learning Model
+
+## Problem Type
+
+Binary Classification
+
+Target Variable
+
+Invoice Flag
+
+Algorithms Tested
+
+- Linear Regression
+- Decision Tree
+- Random Forest
+
+Selected Model
+
+✅ Random Forest Classifier
+
+Reason:
+It achieved the best predictive performance after hyperparameter tuning using GridSearchCV.
+
+---
+
+# 📈 Model Performance
+
+| Metric | Value |
+|---------|--------|
+| Accuracy | **95.49%** |
+| Precision (Class 0) | 94% |
+| Precision (Class 1) | 100% |
+| Recall (Class 0) | 100% |
+| Recall (Class 1) | 87% |
+| F1 Score (Class 0) | 97% |
+| F1 Score (Class 1) | 93% |
+
+---
+
+# 📉 Confusion Matrix
+
+![Confusion Matrix](confusion_matrix.png) 
+<img width="1523" height="1298" alt="confusion_matrix" src="https://github.com/user-attachments/assets/e7cdf180-937a-4755-a49a-7c5d886150d4" />
 
 
-🛠️ 2. The Analytical Process & Tool Stack
-The project implementation combines structured data workflows with real-time web reporting engines:
+The model correctly classified **1,059 out of 1,109 invoices** while maintaining high precision for risky invoices.
 
-Relational Database Layer (SQL): Manages historical purchase records, item quantities, brand tracking indices, and shipping windows via the core database (`inventory (1).db`).
+---
 
-Processing & Analytics Engine (Python): Cleans records, maps calculation matrices, and computes statistical parameters using `Pandas`, `NumPy`, and `Joblib`.
+# 📊 Power BI Dashboard
 
-Business Intelligence Interface (Streamlit Cloud): Renders a high-performance web dashboard displaying multi-page data exploration views and live interactive tracking charts.
+The dashboard consists of three pages.
+
+## Page 1 – Vendor Performance Overview
+
+- Total Purchase Orders
+- Total Procurement Spend
+- Vendor Count
+- Freight Cost
+- Top Vendors
+- Monthly Purchase Trend
+
+---
+
+## Page 2 – Vendor Insights
+
+- Vendor Spend Distribution
+- Vendor Purchase Analysis
+- Freight Analysis
+- Procurement Trends
+- Vendor Comparison
+
+---
+
+## Page 3 – Machine Learning Insights
+
+- Model Accuracy
+- Precision
+- Recall
+- F1 Score
+- Random Forest Details
+- Confusion Matrix
+- Business Recommendations
+
+---
+
+# 🌐 Streamlit Application
+
+The Streamlit application allows users to:
+
+- Enter procurement information
+- Predict invoice risk
+- Estimate freight cost
+- View analytics
+- Support procurement decision-making
+
+---
+
+# 💼 Business Recommendations
+
+- Prioritize manual review of high-risk invoices.
+- Monitor vendors with unusually high freight costs.
+- Reduce manual invoice verification effort using ML predictions.
+- Continuously retrain the model with new procurement data.
+- Combine dashboard insights with ML predictions for better procurement decisions.
+
+---
+
+# 📂 Project Structure
+
+```
+Vendor-Performance/
+│
+├── data/
+├── invoice_flagging/
+├── freight_cost_prediction/
+├── models/
+├── notebooks/
+├── app.py
+├── export_to_csv.py
+├── purchases.csv
+├── vendor_invoice.csv
+├── purchase_prices.csv
+├── begin_inventory.csv
+├── end_inventory.csv
+├── Vendor_Performance_Dashboard.pbix
+├── confusion_matrix.png
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# ▶️ Run Locally
+
+Clone the repository
+
+```bash
+git clone https://github.com/ayushahire255-eng/vendor-performance.git
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Run Streamlit
+
+```bash
+streamlit run app.py
+```
+
+---
+
+# 📸 Screenshots
+
+## Power BI Dashboard
+
+> Add screenshots of:
+- Dashboard Page 1 <img width="1325" height="746" alt="Screenshot 2026-07-30 155017" src="https://github.com/user-attachments/assets/e8ce85ae-7200-4093-8941-f6c14d36f6c8" />
+
+- Dashboard Page 2 <img width="1311" height="737" alt="Screenshot 2026-07-30 155037" src="https://github.com/user-attachments/assets/c1bf1f7e-e3d5-4acb-b49c-b24e701b212d" />
+
+- Dashboard Page 3 <img width="1313" height="740" alt="Screenshot 2026-07-30 155100" src="https://github.com/user-attachments/assets/4f794371-d00d-407f-b742-936a4a4d93d6" />
 
 
+---
 
- 🗃️ 3. SQL Auditing & Data Extraction Purpose
-To ensure strict transaction isolation and verify ledger integrity, Python scripts execute localized SQL queries directly against our operational tables. These processes serve two main purposes:
+## Streamlit App
 
-A. Logistics Cost Auditing (`SELECT Dollars, Freight FROM ...`)
+> Add screenshots of:
+- Home Page <img width="1158" height="658" alt="Screenshot 2026-07-30 155451" src="https://github.com/user-attachments/assets/29839dfe-abdb-4d8e-823f-b813688bf1a2" />
 
-Establishes the relational link between the baseline purchase amount and the corresponding freight fee.
+- Prediction Page <img width="1908" height="799" alt="Screenshot 2026-07-30 155606" src="https://github.com/user-attachments/assets/736dc411-75f9-45e7-8151-2e557b9f2ab7" />
 
-Filters out null or corrupted rows to isolate true transport costs, ensuring pricing benchmarks are accurate.
-
-B. Forensic Compliance Profiling (`SELECT total_brands, total_item_quantity, ... FROM ...`)
-
-Extracts structured parameter sheets mapping: `total_brands`, `total_item_quantity`, `total_item_dollars`, `invoice_dollars`, `Freight`, and `avg_receiving_delay`.
-
-This data allows the engine to flag transactions that drift outside safe transaction boundaries.
+- Analytics Page <img width="1919" height="890" alt="Screenshot 2026-07-30 155630" src="https://github.com/user-attachments/assets/dda94d16-a4f0-45b2-811c-7a0bfae964e8" />
 
 
+---
 
-📊 4. Interactive Reporting Dashboard Architecture
+# 📌 Future Improvements
 
-The live Streamlit application breaks down supply chain tracking indicators into three distinct navigation layers
+- Deploy on Azure
+- Connect to SQL Server
+- Automate model retraining
+- Add real-time data pipeline
+- Implement explainable AI (SHAP)
 
+---
 
-1. 🚚 Freight Cost Analytics Page: Allows auditors to input an invoice subtotal amount to instantly calculate a baseline logistics cost bracket, identifying hidden transport padding or unexpected line-item markups.
+# 👨‍💻 Author
 
-2. 🛡️ Invoice Risk Profiling Page: Evaluates six core billing features side-by-side to compute a transaction risk percentage. Entries showing structural abnormalities trigger immediate visual warnings for manual audit.
+**Ayush Ahire**
 
-3. 📈 Executive Trend Dashboard:Displays real-time interactive plots, including a line graph showing logistics costs scaling against purchase volumes, and an operational bar chart mapping warehouse delay statuses.
+GitHub:
+https://github.com/ayushahire255-eng
 
+---
 
-
-💡 5. Data Insights Drawn From the Ledger
-Based on the operational metrics analyzed through the application, three critical patterns were identified:
-
-Logistics Cost Creep:Transport fees do not scale linearly with order volume; small-batch orders trigger significantly higher proportional freight costs due to lack of carrier consolidation.
-
-Price Variance Drifts: Inbound vendor bills frequently experience a $5 to $10 upward drift compared to the original internal purchase order value, indicating minor, unvetted contract adjustments.
-Warehouse Processing Bottlenecks:Shipments containing more than 4 distinct brands display an average warehouse receiving delay exceeding 4.2 days, stalling downstream supply chains.
-
-
-
-🚀 6. Strategic Recommendations for the Firm
-
-1. To maximize procurement efficiency and minimize capital waste, the following operational steps are recommended:
-
-2. Consolidate Low-Volume POs:Group single-brand purchase orders into unified multi-item transactions to secure bulk freight rates and avoid single-shipment premiums.
-
-3. Implement Automated Hard-Stop Thresholds: Integrate the web application directly with accounts payable to automatically freeze payment approvals for any invoice displaying an audit risk probability greater than 70%
-
-4. Optimize Supplier SLA Agreements: Renegotiate delivery penalties for vendors dropping mixed-brand shipments that exceed the 4-day warehouse processing threshold.
-
+## ⭐ If you found this project useful, consider giving it a star!
